@@ -1,7 +1,7 @@
 #!/usr/bin/luajit
 -------------------------------------------------------------------------------
--- Name:        SCTR - Simple Console Time Registrator                       --
--- Version:     0.2.4.5                                                      --
+-- Name:        PetriNet                                                     --
+-- Version:     0.0.0.1                                                      --
 -- Author:      D.A. Pavlyuk                                                 --
 -- License:     GPL                                                          --
 -- Description: Моделирование сетей Петри                                    --
