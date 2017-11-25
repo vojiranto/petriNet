@@ -37,5 +37,8 @@ function new.Knot (limit)
             return content
     end end
     
+    public.toString = function ()
+        return private.content
+    end
     return copy(public)
 end
