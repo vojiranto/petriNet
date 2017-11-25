@@ -7,8 +7,8 @@ function new.Main ()
         private.converters = {new.Converter(), new.Converter()}
         
         -- ставим маркер в начало цепочки
+        --[[
         private.knots[1].addContent(1)
-        
         
         private.converters[1].addInputKnot(private.knots[1], 1)
         private.converters[1].addOutputKnot(private.knots[2], 1)
@@ -17,14 +17,23 @@ function new.Main ()
         private.converters[2].addOutputKnot(private.knots[3], 1)
     
         private.petriNet = new.PetriNet(private.knots, private.converters)
-        private.petriNet.print()
-        print "-----"
-        private.petriNet.step()
-        private.petriNet.print()
-        print "-----"
-        private.petriNet.step()
-        private.petriNet.print()
+        --]]
+        private.petriNet = new.PetriNet{
+            {{1}, {2}},
+            {{2}, {3}}
+        }
+        private.petriNet.addContent{{1,1}}
+        
+        for i = 1, 3 do
+            private.petriNet.print()
+            print "-----"
+            private.petriNet.step()
+        end
     end
 
     return copy(public)
 end
+--[[
+{{1}, {2}}
+{{2}, {3}}
+--]]
