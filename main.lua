@@ -1,7 +1,7 @@
 #!/usr/bin/luajit
 -------------------------------------------------------------------------------
 -- Name:        PetriNet                                                     --
--- Version:     0.0.0.1                                                      --
+-- Version:     0.0.0.2                                                      --
 -- Author:      D.A. Pavlyuk                                                 --
 -- License:     GPL                                                          --
 -- Description: Моделирование сетей Петри                                    --
@@ -23,6 +23,9 @@ dolibs {
 }
 
 dofiles {
+    "converter",
+    "knot",
+    "petriNet",
     "main",
 }
 
