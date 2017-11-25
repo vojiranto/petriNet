@@ -16,13 +16,23 @@ local function maximum (t)
     return res
 end
 
+-- перемешивание
+local function mixing (t)
+    for i = 1, #t do
+        local j = math.random(#t)
+        t[j], t[i] = t[i], t[j]
+end end
+
+
 function new.PetriNet (knots, converters)
+    math.randomseed(os.time())
     -- стандартный способ построения сети
     if converters then
         local public = {}
 
         -- ход состоит из двух фаз, взятия и отдачи
         public.step = function ()
+            mixing(converters)
             for _, v in pairs(converters) do
                 v.take()
             end

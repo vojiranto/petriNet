@@ -6,14 +6,13 @@ function new.Main ()
         -- узлы и преобразователи
         private.petriNet = new.PetriNet{
             {{1}, {2}},
-            {{2}, {3}},
-            {{3}, {}}
+            {{1}, {3}}
         }
         
         -- маркеры
         private.petriNet.addContent{{1,1}}
         
-        for i = 1, 4 do
+        for i = 1, 2 do
             private.petriNet.print()
             print "-----"
             private.petriNet.step()
