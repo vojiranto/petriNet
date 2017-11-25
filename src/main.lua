@@ -16,18 +16,14 @@ function new.Main ()
         private.converters[2].addInputKnot(private.knots[2], 1)
         private.converters[2].addOutputKnot(private.knots[3], 1)
     
-        private.petriNet = new.petriNet(private.knots, private.converters)
+        private.petriNet = new.PetriNet(private.knots, private.converters)
         private.petriNet.print()
-        print "----------------"
+        print "-----"
         private.petriNet.step()
         private.petriNet.print()
-        print "----------------"
+        print "-----"
         private.petriNet.step()
         private.petriNet.print()
-        print "----------------"
-        private.petriNet.step()
-        private.petriNet.print()
-        print "----------------"
     end
 
     return copy(public)

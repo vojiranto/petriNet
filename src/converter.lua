@@ -1,12 +1,11 @@
 function new.Converter ()
-    local private {
+    local private = {
         inputKnots  = {},
         outputKnots = {},
-        isActive      = false,
+        isActive    = false,
     }
     private.addKnot = function (knotTable, knot, multiplicity)
-        knotTable[knot] = multiplicity,
-        }
+        knotTable[knot] = multiplicity
     end
 
     local public = {}
@@ -29,7 +28,7 @@ function new.Converter ()
         end end
         
         -- взять всё что нужно
-        for _, v in pairs(private.inputKnots) do
+        for k, v in pairs(private.inputKnots) do
             k.getContent(v)
         end
         private.isActive = true
@@ -37,9 +36,10 @@ function new.Converter ()
     
     -- разложить всё, что нужно
     public.recoil = function ()
-        for k, v in pairs(private.outputKnots) do
+        if private.isActive then
+            for k, v in pairs(private.outputKnots) do
             k.addContent(v)
-    end end
+    end end end
 
     return copy(public)
 end
